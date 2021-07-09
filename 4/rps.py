@@ -1,33 +1,24 @@
 import random
 
-your_choice = int(input("\nWhat do you choose? Type 0 for Rock, 1 for Paper, and 2 for Scissors. "))
+user_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n"))
+print(game_images[user_choice])
 
-comp_choice = random.randint(0, 2)
+computer_choice = random.randint(0, 2)
+print("Computer chose:")
+print(game_images[computer_choice])
 
-if your_choice == 0:
-    print("\nYou chose Rock")
-elif your_choice == 1:
-    print("\nYou chose Paper")
-elif your_choice == 2:
-    print("\nYou chose Scissors")
-
-if comp_choice == 0:
-    print("\nComputer chose Rock")
-elif comp_choice == 1:
-    print("\nComputer chose Paper")
-elif comp_choice == 2:
-    print("\nComputer chose Scissors")
-
-if your_choice == 0 and comp_choice == 2:
-    print("You Win!")
-if comp_choice == 0 and your_choice == 2:
-    print("You Lose!")
-elif comp_choice > your_choice:
-    print("You Lose!")
-elif comp_choice == your_choice:
-    print("It's a draw!")
-else:
-    print("You typed an invalid number. You lose!")
+if user_choice >= 3 or user_choice < 0: 
+  print("You typed an invalid number, you lose!") 
+elif user_choice == 0 and computer_choice == 2:
+  print("You win!")
+elif computer_choice == 0 and user_choice == 2:
+  print("You lose")
+elif computer_choice > user_choice:
+  print("You lose")
+elif user_choice > computer_choice:
+  print("You win!")
+elif computer_choice == user_choice:
+  print("It's a draw")
 
 
     
