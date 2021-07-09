@@ -8,23 +8,22 @@ nr_letters = int(input("How many letters would you like in your password?\n"))
 nr_numbers = int(input("How many numbers would you like?\n"))
 nr_symbols = int(input("How many symbols would you like?\n"))
 
-
 chosen_password = []
 
 for num in range(0, nr_letters):
-    chosen_password += letters[random.randint(0, 25)]
-
+    chosen_password += random.choice(letters)
 
 for num in range(0, nr_numbers):
-    chosen_password += numbers[random.randint(0, 9)]
+    chosen_password += random.choice(numbers)
 
 for num in range(0, nr_symbols):
-    chosen_password += symbols[random.randint(0, 8)]
+    chosen_password += random.choice(symbols)
+
+random.shuffle(chosen_password)
 
 randomized_password = ''
 
-for char in range(0, len(chosen_password)):
-    x = chosen_password[random.randint(0, len(chosen_password)-1)]
-    chosen_password.remove(x)
-    randomized_password += x
+for char in chosen_password:
+    randomized_password += char
+
 print(randomized_password)
