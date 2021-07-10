@@ -3,20 +3,26 @@ import random
 word_list = ['ardvark', 'baboon', 'camel']
 
 chosen_word = random.choice(word_list)
+word_length = (len(chosen_word))
 
 display = []
-for char in chosen_word:
+for char in range(word_length):
     display.append('_')
 
 print(display)
 
-while display.count("_") > 0:
+end_of_game = False
+
+while end_of_game == False:
     guess = input("Please guess a letter: ").lower()
 
-    for char in chosen_word:
-        if guess == char:
-            pos = chosen_word.index(char)
-            display[pos] = char
-            print(display)
+    for position in range(word_length):
+        letter = chosen_word[position]
+        if letter == guess:
+            display[position] = letter
 
+    print(display)
 
+    if "_" not in display:
+        end_of_game = True
+        print("You win.")
