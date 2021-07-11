@@ -24,8 +24,6 @@ for char in range(word_length):
 
 end_of_game = False
 
-
-
 while end_of_game == False:
     guess = input("Please guess a letter: ").lower()
 
