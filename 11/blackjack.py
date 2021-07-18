@@ -1,5 +1,3 @@
-from hashlib import scrypt
-from warnings import catch_warnings
 from art import logo
 from os import system, name
 import random
