@@ -1,4 +1,5 @@
-year = input("Which year do your want to check? :")
+#Year was being set to type Str which is incompatible with type int in math operations
+year = int(input("Which year do your want to check? : "))
 
 if year % 4 == 0:
     if year % 100 == 0:
