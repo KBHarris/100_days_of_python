@@ -6,4 +6,5 @@ for number in range(1, 101):
     if number % 5 == 0:
         print("Buzz")
     else:
-        print([number])
+        print(number)
+        #The else statement was trying to print a list containing number, no such object exists.
